@@ -8,15 +8,18 @@ module GoEat
     # This class is created to run Order command
 
     # The main method
-    def self.run_order(store_book, driver_book, history_book, user_obj, order_receipt)
+    def self.run_order(store_book, driver_book, history_book, user_obj)
       # takes 4 argument:
       # 1. store_book : array of existing store object(s)
       # 2. driver_book : array of existing driver object(s)
       # will be used to determine which driver who will take the order
       # 3. history_book : array of existing order object(s)
       # 4. user_obj the current user object
-      # 5. order_receipt object of Order class to save order information
 
+      # Create a dummy Order object
+      order_receipt = Order.new
+
+      # Run the Show baby
       puts "Welcome to the ordering menu, Kamerad!!"
       puts "Choose from one of this store's number to start ordering!!!"
       # Displaying available store(s)
