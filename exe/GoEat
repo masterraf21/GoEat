@@ -3,4 +3,4 @@
 require "bundler/setup"
 require "GoEat"
 
-GoEat::CLI.new.start
+GoEat::CLI.start

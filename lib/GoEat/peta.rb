@@ -1,4 +1,3 @@
-require 'tty'
 module GoEat
 
   class Randomize

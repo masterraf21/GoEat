@@ -16,17 +16,18 @@ the main GoEat directory:
 
 ## Usage
 
-You can run this app with 3 arguments. Simply run this commands on the /exe directory:
+You can run these app with 3 arguments. Simply run this commands on the /exe directory:
 1. With no argument
    
-   `ruby GoEat -n`
+   `ruby GoEat`
 
 2. With 3 arguments. The first one is the size of the map 'n', and the next two are the
-coordinate of the user, 'x', and 'y'
+coordinate of the user, 'x', and 'y' 
+**(this feature is not yet implemented)**
     
     `ruby GoEat -t n x y`
 
-3. With a filename (this feature is not yet implemented)
+3. With a filename **(this feature is not yet implemented)**
 
     `ruby GoEat -f data.txt`
         

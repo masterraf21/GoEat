@@ -1,4 +1,4 @@
-require 'lib/Go_Eat/peta'
+require_relative 'peta'
 
 module GoEat
   # Defining constant
@@ -150,9 +150,9 @@ module GoEat
     attr_accessor :item_ordered
     attr_accessor :price
 
-    def initialize end
 
-      def write_to_file(filename)
+
+      def self.write_to_file(filename)
 
       end
 
