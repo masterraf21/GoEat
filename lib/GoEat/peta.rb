@@ -57,7 +57,7 @@ module GoEat
   end
   class Maps
 
-    attr_reader :map_array
+    attr_accessor :map_array
 
     # initialize the map with specified width and height
     def initialize(width, height)
@@ -83,7 +83,24 @@ module GoEat
       end
     end
 
+    def add_book_to_map(object_book)
+      # This method will ad an array consist of objects
+      # to the current map initialized
+      object_book.each_with_index do |val, _index|
+        if (val.class == User)
+          @map_array[val.coordinate.x][val.coordinate.y] = 1
+        elsif (val.class == Driver)
+          @map_array[val.coordinate.x][val.coordinate.y] = 2
+        else #obj.class == Store
+          @map_array[val.coordinate.x][val.coordinate.y] = 3
+        end
+
+      end
+
+    end
+
     def draw_map
+      puts "HELLO BITCHES"
 
     end
 

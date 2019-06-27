@@ -75,26 +75,24 @@ module GoEat
 
   class Store
     attr_reader :name
-    attr_reader :number_of_item
     attr_accessor :coordinate
     attr_reader :menu
 
     # A store object will have name, coordinate, and number of item(s) in the menu
-    def initialize(name, number_of_item, coordinate_x, coordinate_y)
+    def initialize(name, coordinate_x, coordinate_y)
       @name = name
-      @number_of_item = number_of_item
       @coordinate = Coordinate.new(coordinate_x, coordinate_y)
     end
 
 
     def create_menu
-      @menu = Array.new(@number_of_item)
-      @menu_counter = 0
+      @menu = Array.new
+
     end
 
     def add_menu(item_name, price)
-      @menu[@menu_counter] = Item.new(item_name, price)
-      @menu_counter += 1
+      menu = Item.new(item_name, price)
+      @menu << menu
     end
 
   end
