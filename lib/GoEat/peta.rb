@@ -58,6 +58,8 @@ module GoEat
   class Maps
 
     attr_accessor :map_array
+    attr_reader :width
+    attr_reader :height
 
     # initialize the map with specified width and height
     def initialize(width, height)
@@ -74,19 +76,21 @@ module GoEat
       # add specified value to map according to the type of the object
       # method will add values
       # 0 : default. 1 : User, 2 : Driver, 3 : Store
+      x = obj.coordinate.x
+      y = obj.coordinate.y
       if (obj.class == User)
-        @map_array[obj.coordinate.x][obj.coordinate.y] = 1
+        @map_array[x][y] = 1
       elsif (obj.class == Driver)
-        @map_array[obj.coordinate.x][obj.coordinate.y] = 2
+        @map_array[x][y] = 2
       else #obj.class == Store
-        @map_array[obj.coordinate.x][obj.coordinate.y] = 3
+        @map_array[x][y] = 3
       end
     end
 
     def add_book_to_map(object_book)
       # This method will ad an array consist of objects
       # to the current map initialized
-      object_book.each_with_index do |val, _index|
+      object_book.each do |val|
         if (val.class == User)
           @map_array[val.coordinate.x][val.coordinate.y] = 1
         elsif (val.class == Driver)
@@ -100,14 +104,10 @@ module GoEat
     end
 
     def draw_map
-      puts "HELLO BITCHES"
+      # not implemented yet
+      # but the idea is to
 
     end
-
-    private
-
-    attr_reader :width
-    attr_reader :height
   end
 
 
